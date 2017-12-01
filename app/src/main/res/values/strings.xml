@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">EjemploMenu</string>
+    <string name="actividad_principal">ACTIVIDAD PRINCIPAL</string>
+    <string name="esto_se_rellena_al_ir_a_la_opcion_1">esto_se_rellena_al_ir_a_la_opcion_1</string>
+    <string name="esto_se_rellena_al_ir_a_la_opcion_2">esto_se_rellena_al_ir_a_la_opcion_2</string>
+    <string name="esto_se_rellena_al_ir_a_la_opcion_3">esto_se_rellena_al_ir_a_la_opcion_3</string>
+    <string name="esto_se_rellena_al_ir_a_la_opcion_4">esto_se_rellena_al_ir_a_la_opcion_4</string>
+    <string name="esto_se_rellena_al_ir_a_la_opcion_5">esto_se_rellena_al_ir_a_la_opcion_5</string>
+    <string name="esto_se_rellena_al_ir_a_la_opcion_6">esto_se_rellena_al_ir_a_la_opcion_6</string>
+    <string name="has_ido_a_la_opcion_1">Has ido a la opcion 1</string>
+</resources>
