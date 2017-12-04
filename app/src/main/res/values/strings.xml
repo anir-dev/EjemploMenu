@@ -8,4 +8,16 @@
     <string name="esto_se_rellena_al_ir_a_la_opcion_5">esto_se_rellena_al_ir_a_la_opcion_5</string>
     <string name="esto_se_rellena_al_ir_a_la_opcion_6">esto_se_rellena_al_ir_a_la_opcion_6</string>
     <string name="has_ido_a_la_opcion_1">Has ido a la opcion 1</string>
+    <string name="has_ido_a_la_opcion_2">Has ido a la opcion 2</string>
+    <string name="opcion1">Opcion1</string>
+    <string name="opcion2">Opcion2</string>
+    <string name="opcion3">Opcion3</string>
+    <string name="opcion4">Opcion4</string>
+    <string name="opcion5">Opcion5</string>
+    <string name="opcion6">Opcion6</string>
+    <string name="has_ido_a_la_opcion_3">has_ido_a_la_opcion_3</string>
+    <string name="has_ido_a_la_opcion_4">has_ido_a_la_opcion_4</string>
+    <string name="has_ido_a_la_opcion_5">has_ido_a_la_opcion_5</string>
+    <string name="has_ido_a_la_opcion_6">has_ido_a_la_opcion_6</string>
+
 </resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/Opcion1"
+        android:title="@string/opcion1"
+        app:showAsAction="never">
+    </item>
+    <!-- showAsAction sirve para mostrar u ocultar los items del menu-->
+    <!-- En caso de querer mostrar una lista desplegable utilizar "never"-->
+    <!-- En caso de querer mostrar un elemento de la lista desplegable utilizar "always"-->
+    <!-- En caso de querer cuadrar el cuadro de opciones "ifRoom"-->
+    <item
+        android:id="@+id/Opcion2"
+        android:title="@string/opcion2"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/Opcion3"
+        android:title="@string/opcion3"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/Opcion4"
+        android:title="@string/opcion4"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/Opcion5"
+        android:title="@string/opcion5"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/Opcion6"
+        android:title="@string/opcion6"
+        app:showAsAction="never">
+    </item>
+</menu>
