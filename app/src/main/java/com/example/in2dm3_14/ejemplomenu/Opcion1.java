@@ -14,7 +14,7 @@ public class Opcion1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.opcion1);
 
-        TextView textoOpcion1=(TextView)findViewById(R.id.textViewOpcion1);
+        textoOpcion1=findViewById(R.id.textViewOpcion1);
         texto=textoOpcion1.getText().toString();
 
         //registerForContextMenu(textoOpcion1);
@@ -23,11 +23,15 @@ public class Opcion1 extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        //super.onBackPressed();
 
         Bundle baul=new Bundle();
         baul.putString("textoOpcion1",texto);
-        Intent i=new Intent(this,MainActivity.class);
+        //Intent i=new Intent(this,MainActivity.class);
+        Intent i =new Intent();
+        i.putExtra("baul",baul);
+        setResult(RESULT_OK,i);
+        finish();
 
     }
 }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
     <item
         android:id="@+id/Opcion1"
         android:title="@string/opcion1"
@@ -28,11 +30,15 @@
     <item
         android:id="@+id/Opcion5"
         android:title="@string/opcion5"
-        app:showAsAction="never">
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="always|withText">
     </item>
+    <!-- En esta opcion incluimos un icono a la toolbar incluyendo tambien el texto visible en landscape-->
     <item
         android:id="@+id/Opcion6"
+        android:icon="@mipmap/ic_launcher"
         android:title="@string/opcion6"
-        app:showAsAction="never">
+        app:showAsAction="always|withText"
+        >
     </item>
 </menu>

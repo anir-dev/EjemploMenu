@@ -3,8 +3,10 @@ package com.example.in2dm3_14.ejemplomenu;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,13 +37,15 @@ public class MainActivity extends AppCompatActivity {
     private static int REQUEST_CODE5=5;
     private static int REQUEST_CODE6=6;
 
-    /*public static final int OPCION_1 = 0;
+    public static final int OPCION_1 = 0;
     public static final int OPCION_2 = 1;
     public static final int OPCION_3 = 2;
     public static final int OPCION_4 = 3;
     public static final int OPCION_5 = 4;
-    public static final int OPCION_6 = 5;*/
+    public static final int OPCION_6 = 5;
 
+    MenuItem item=null;
+    int id=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +58,23 @@ public class MainActivity extends AppCompatActivity {
         textoOpcion4=findViewById(R.id.textView4);
         textoOpcion5=findViewById(R.id.textView5);
         textoOpcion6=findViewById(R.id.textView6);
+
+        //para asignar el menu contextual a los objetos que se requiera
+        registerForContextMenu(textoOpcion1);
+        registerForContextMenu(textoOpcion2);
+        registerForContextMenu(textoOpcion3);
+        registerForContextMenu(textoOpcion4);
+        registerForContextMenu(textoOpcion5);
+        registerForContextMenu(textoOpcion6);
     }
 
+    /*@Override
+    public void registerForContextMenu(View view) {
+        super.registerForContextMenu(view);
+        id=view.getId();
+
+    }*/
+    //para crear e incluir el menu en la actividad (toolbar)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //super.onCreateOptionsMenu(menu);
@@ -73,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         MenuItem item5=menu.add(Menu.NONE, OPCION_5,Menu.NONE,"Opcion 5");
         MenuItem item6=menu.add(Menu.NONE, OPCION_6,Menu.NONE,"Opcion 6");
     }*/
-
+    //el siguiente metodo sirve para aplicar las acciones a las opciones del menu desplegable
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -120,11 +139,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
+    //para aplicar los cambios sin perder los datos guardados anteriormente al pasar entre actividades
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         //super.onActivityResult(requestCode, resultCode, data);
-        parametros = this.getIntent().getExtras();
+        //parametros = this.getIntent().getExtras();
         if (requestCode==REQUEST_CODE1) {
             if (resultCode == RESULT_OK) {
                 parametros = data.getBundleExtra("baul");
@@ -177,5 +196,177 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+    //este metodo sirve para añadir las opciones al menu contextual
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuItem item1= menu.add(Menu.NONE, OPCION_1,Menu.NONE,"Rosa");
+        MenuItem item2= menu.add(Menu.NONE, OPCION_2,Menu.NONE,"Azul");
+        MenuItem item3= menu.add(Menu.NONE, OPCION_3,Menu.NONE,"Rojo");
+        MenuItem item4= menu.add(Menu.NONE, OPCION_4,Menu.NONE,"Verde");
+        MenuItem item5= menu.add(Menu.NONE, OPCION_5,Menu.NONE,"Marron");
+
+        id=v.getId();
+        //int id=item1.getItemId();
+
+        /*if(id==OPCION_1){
+            textoOpcion1.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        }else if(id==OPCION_2){
+            textoOpcion1.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        }*/
+    }
+    //este metodo sirve para aplicar las opciones del menu contextual sobre los textview
+    //estaria bien aplicar los cambios en otro metodo (posible mejora)
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        //id=item.getItemId();
+        if(id==textoOpcion1.getId()) {
+
+            switch (item.getItemId()) {
+                case OPCION_1:
+                    textoOpcion1.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    return true;
+                case OPCION_2:
+                    textoOpcion1.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    return true;
+                case OPCION_3:
+                    textoOpcion1.setBackgroundColor(getResources().getColor(R.color.Rojo));
+                    return true;
+                case OPCION_4:
+                    textoOpcion1.setBackgroundColor(getResources().getColor(R.color.Verde));
+                    return true;
+                case OPCION_5:
+                    textoOpcion1.setBackgroundColor(getResources().getColor(R.color.Marron));
+                    return true;
+                default:
+                    return super.onContextItemSelected(item);
+            }
+        }else if(id==textoOpcion2.getId()){
+            switch (item.getItemId()) {
+                case OPCION_1:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    return true;
+                case OPCION_2:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    return true;
+                case OPCION_3:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.Rojo));
+                    return true;
+                case OPCION_4:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.Verde));
+                    return true;
+                case OPCION_5:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.Marron));
+                    return true;
+                default:
+                    return super.onContextItemSelected(item);
+            }
+        }else if(id==textoOpcion3.getId()){
+            switch (item.getItemId()) {
+                case OPCION_1:
+                    textoOpcion3.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    return true;
+                case OPCION_2:
+                    textoOpcion3.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    return true;
+                case OPCION_3:
+                    textoOpcion3.setBackgroundColor(getResources().getColor(R.color.Rojo));
+                    return true;
+                case OPCION_4:
+                    textoOpcion3.setBackgroundColor(getResources().getColor(R.color.Verde));
+                    return true;
+                case OPCION_5:
+                    textoOpcion3.setBackgroundColor(getResources().getColor(R.color.Marron));
+                    return true;
+                default:
+                    return super.onContextItemSelected(item);
+            }
+        }else if(id==textoOpcion4.getId()){
+            switch (item.getItemId()) {
+                case OPCION_1:
+                    textoOpcion4.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    return true;
+                case OPCION_2:
+                    textoOpcion4.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    return true;
+                case OPCION_3:
+                    textoOpcion4.setBackgroundColor(getResources().getColor(R.color.Rojo));
+                    return true;
+                case OPCION_4:
+                    textoOpcion4.setBackgroundColor(getResources().getColor(R.color.Verde));
+                    return true;
+                case OPCION_5:
+                    textoOpcion4.setBackgroundColor(getResources().getColor(R.color.Marron));
+                    return true;
+                default:
+                    return super.onContextItemSelected(item);
+            }
+        }else if(id==textoOpcion5.getId()){
+            switch (item.getItemId()) {
+                case OPCION_1:
+                    textoOpcion5.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    return true;
+                case OPCION_2:
+                    textoOpcion5.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    return true;
+                case OPCION_3:
+                    textoOpcion5.setBackgroundColor(getResources().getColor(R.color.Rojo));
+                    return true;
+                case OPCION_4:
+                    textoOpcion5.setBackgroundColor(getResources().getColor(R.color.Verde));
+                    return true;
+                case OPCION_5:
+                    textoOpcion5.setBackgroundColor(getResources().getColor(R.color.Marron));
+                    return true;
+                default:
+                    return super.onContextItemSelected(item);
+            }
+        }else if(id==textoOpcion6.getId()){
+            switch (item.getItemId()) {
+                case OPCION_1:
+                    textoOpcion6.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    return true;
+                case OPCION_2:
+                    textoOpcion6.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    return true;
+                case OPCION_3:
+                    textoOpcion6.setBackgroundColor(getResources().getColor(R.color.Rojo));
+                    return true;
+                case OPCION_4:
+                    textoOpcion6.setBackgroundColor(getResources().getColor(R.color.Verde));
+                    return true;
+                case OPCION_5:
+                    textoOpcion6.setBackgroundColor(getResources().getColor(R.color.Marron));
+                    return true;
+                default:
+                    return super.onContextItemSelected(item);
+            }
+        }
+
+            //}
+        //}else if(id==textoOpcion2.getId()){
+            /*switch (item.getItemId()) {
+                case OPCION_1:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    return true;
+                case OPCION_2:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    return true;
+                case OPCION_3:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.Rojo));
+                    return true;
+                case OPCION_4:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.Verde));
+                    return true;
+                case OPCION_5:
+                    textoOpcion2.setBackgroundColor(getResources().getColor(R.color.Marron));
+                    return true;
+                default:
+                    return super.onContextItemSelected(item);*/
+           // }
+        //}
+        return super.onContextItemSelected(item);
     }
 }
